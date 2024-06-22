@@ -4,16 +4,54 @@
 {% block title %}About Us{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1 class="mt-4">About Our Web App</h1>
-  <p class="lead">Our web app helps manage garbage collection schedules efficiently and effectively.</p>
-  <hr>
-  <p>With our app, you can:</p>
-  <ul>
-    <li>Track garbage collection dates and times</li>
-    <li>Manage different types of garbage</li>
-    <li>Receive notifications for upcoming collections</li>
-  </ul>
-  <p>Sign up today to start managing your garbage collection!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="display-4 text-center">About Our Web App</h1>
+      <p class="lead text-center">Making garbage collection management simple and efficient.</p>
+      <hr class="my-4">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h2 class="card-title">Our Mission</h2>
+          <p class="card-text">We aim to streamline the process of managing garbage collection schedules, ensuring that communities stay clean and organized without any hassle.</p>
+        </div>
+      </div>
+      <div class="card shadow-lg mt-4">
+        <div class="card-body">
+          <h2 class="card-title">Features</h2>
+          <ul class="list-unstyled">
+            <li class="media my-4">
+              <i class="fa fa-calendar-check-o fa-2x mr-3" aria-hidden="true"></i>
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">Track Collection Dates</h5>
+                Easily keep track of when your garbage will be collected.
+              </div>
+            </li>
+            <li class="media my-4">
+              <i class="fa fa-trash fa-2x mr-3" aria-hidden="true"></i>
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">Manage Garbage Types</h5>
+                Organize different types of garbage for more efficient disposal.
+              </div>
+            </li>
+            <li class="media my-4">
+              <i class="fa fa-bell fa-2x mr-3" aria-hidden="true"></i>
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">Receive Notifications</h5>
+                Get notified of upcoming collections so you never miss a date.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card shadow-lg mt-4 mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Join Us</h2>
+          <p class="card-text">Sign up today to start managing your garbage collection with ease and efficiency. Our app is designed to make your life easier by ensuring you are always up-to-date with your garbage collection schedules.</p>
+          <a href="{{ url_for('auth.sign_up') }}" class="btn btn-primary btn-lg">Sign Up Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
