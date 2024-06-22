@@ -8,7 +8,7 @@ from . import db
 
 admin_auth = Blueprint('admin_auth', __name__)
 
-@admin_auth.route('/admin/login', methods=['GET', 'POST'])
+@admin_auth.route('/login', methods=['GET', 'POST'])
 def admin_login():
     if request.method == 'POST':
         username = request.form['username']
@@ -25,7 +25,7 @@ def admin_login():
 
     return render_template('admin/login.html')
 
-@admin_auth.route('/admin/logout')
+@admin_auth.route('/logout')
 @login_required
 def admin_logout():
     logout_user()
