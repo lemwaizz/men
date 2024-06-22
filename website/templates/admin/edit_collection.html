@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% block title %}Edit Garbage Collection{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4">Edit Garbage Collection</h1>
+  <hr>
+  <form method="POST">
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" name="date" value="{{ collection.date }}" required>
+    </div>
+    <div class="form-group">
+      <label for="time">Time:</label>
+      <input type="time" class="form-control" id="time" name="time" value="{{ collection.time }}" required>
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" class="form-control" id="location" name="location" value="{{ collection.location }}" required>
+    </div>
+    <div class="form-group">
+      <label for="type">Type of Garbage:</label>
+      <input type="text" class="form-control" id="type" name="type" value="{{ collection.garbage_type }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Collection</button>
+  </form>
+</div>
+{% endblock %}
