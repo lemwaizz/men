@@ -1,4 +1,4 @@
-# Smart Waste Management System Documentation
+#Smart Waste Management System Documentation
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
