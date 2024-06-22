@@ -22,7 +22,7 @@ def create_app():
     app.register_blueprint(admin, url_prefix='/admin')
     app.register_blueprint(admin_auth, url_prefix='/admin')  # Register admin_auth blueprint
 
-    from .models import User, GarbageCollection
+    from .models import User, GarbageCollection, Admin
 
     with app.app_context():
         db.create_all()
