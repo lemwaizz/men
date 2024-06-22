@@ -42,6 +42,6 @@ def delete_collection():
             flash('Garbage collection deleted successfully!', category='success')
     
     return jsonify({})
-@views.route('/')
+@views.route('/about-us')
 def about_us():
     return render_template('about_us.html')
