@@ -1,6 +1,6 @@
 from . import db
 from flask_login import UserMixin
-from sqlalchemy.sql import func
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class GarbageCollection(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,14 +13,14 @@ class GarbageCollection(db.Model):
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True)
-    password = db.Column(db.String(150))
+    password = db.Column(db.String(255))
     first_name = db.Column(db.String(150))
-    notes = db.relationship('Note', backref='user', lazy=True)
     collections = db.relationship('GarbageCollection', backref='user', lazy=True)
 
 class Admin(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
 
     def set_password(self, password):
